@@ -1,21 +1,12 @@
 {
-    "name": "The Age Paywall Bypass",
-    "version": "1.1.0",
+    "name": "Fairfax Paywall Bypass",
+    "version": "0.1.0",
     "manifest_version": 2,
-    "description": "This extension bypasses the Age's monthly article limit paywall.",
+    "description": "Extension bypass / hide the Fairfax monthly article limit paywall.",
     "icons": {
-        "16": "img/icon16.png",
-        "48": "img/icon48.png",
-        "128": "img/icon128.png"
-    },
-    "permissions": [
-        "webRequest",
-        "webRequestBlocking",
-        "*://*.resources.fairfax.com.au/*"
-    ],
-    "background": {
-        "scripts": ["js/bypass.js"],
-        "persistent": true
+        "16": "img/firewall16.png",
+        "48": "img/firewall48.png",
+        "128": "img/firewall128.png"
     },
     "content_scripts": [
         {
@@ -24,9 +15,28 @@
                 "css/bypass.css"
             ],
             "matches": [
-                "*://*.theage.com.au/*"
+                "*://*.brisbanetimes.com.au/*",
+                "*://*.theage.com.au/*",
+                "*://*.smh.com.au/*",
+                "*://*.canberratimes.com.au/*",
+                "*://*.watoday.com.au/*",
+                "*://*.afr.com/*",
+                "*://*.domain.com.au/*",
+                "*://*.traveller.com.au/*",
+                "*://*.goodfood.com.au/*",
+                "*://*.executivestyle.com.au/*",
+                "*://*.thestore.com.au/*",
+                "*://*.drive.com.au/*",
+                "*://*.adzuna.com.au/*",
+                "*://*.rsvp.com.au/*",
+                "*://*.essentialbaby.com.au/*",
+                "*://*.weatherzone.com.au/*",
+                "*://*.commercialrealestate.com.au/*",
+                "*://*.oneflare.com.au/*",
+                "*://*.nabo.com.au/*"
             ],
-            "run_at": "document_start"
+            "js": ["js/lib/jquery-3.2.1.min.js","js/bypass.js"],
+            "run_at": "document_end"
         }
     ]
 }
